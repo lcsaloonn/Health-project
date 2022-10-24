@@ -1,4 +1,8 @@
 import { Injectable } from '@nestjs/common';
+import { CreateExerciceDTO } from './dtos/createExercice.dto';
+import { ExerciceDescriptionEntity } from './entities/description/exercice.description.entity';
+import { ExerciceEntiy } from './entities/exercice.entity';
+import { ExerciceRealisationEntity } from './entities/realisation/exercice.realisation.entity';
 import { ExerciceRepository } from './exercice.repository';
 import { IExercice } from './interface/exercice.interface';
 
@@ -25,5 +29,23 @@ export class ExerciceService {
     return this._exerciceRepository.find({
       description: { tags: { $all: ['red', 'blank'] } },
     });
+  }
+
+  /**
+   * CREATE
+   */
+  async createExercice(exerciceDto: CreateExerciceDTO): Promise<void> {
+    const creation = exerciceDto.creationUser
+      ? { creationDate: new Date(), creationUser: exerciceDto.creationUser }
+      : undefined;
+
+    this._exerciceRepository.create(
+      new ExerciceEntiy(
+        exerciceDto.title,
+        new ExerciceDescriptionEntity(exerciceDto.description),
+        new ExerciceRealisationEntity(exerciceDto.realisation),
+        creation,
+      ),
+    );
   }
 }

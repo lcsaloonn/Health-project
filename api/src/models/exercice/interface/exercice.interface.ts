@@ -13,7 +13,7 @@ export interface IExercice {
 export interface IExerciceDescription {
   description: string;
   raiting: number;
-  bodyPart: BodyPartEnum[];
+  bodyParts: BodyPartEnum[];
   imageUrl: string;
 }
 

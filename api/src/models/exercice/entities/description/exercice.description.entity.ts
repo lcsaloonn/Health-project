@@ -4,18 +4,18 @@ import { IExerciceDescription } from '../../interface/exercice.interface';
 export class ExerciceDescriptionEntity implements IExerciceDescription {
   description: string;
   raiting: number;
-  bodyPart: BodyPartEnum[];
+  bodyParts: BodyPartEnum[];
   imageUrl: string;
 
-  constructor(
-    description: string,
-    raiting: number,
-    bodyPart: BodyPartEnum[],
-    imageUrl: string,
-  ) {
-    this.description = description;
-    this.raiting = raiting;
-    this.bodyPart = bodyPart;
-    this.imageUrl = imageUrl;
+  constructor(obj: {
+    description: string;
+    raiting: number;
+    bodyParts: BodyPartEnum[];
+    imageUrl: string;
+  }) {
+    this.description = obj.description;
+    this.raiting = obj.raiting;
+    this.bodyParts = obj.bodyParts;
+    this.imageUrl = obj.imageUrl;
   }
 }

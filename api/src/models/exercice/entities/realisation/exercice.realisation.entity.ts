@@ -7,15 +7,15 @@ export class ExerciceRealisationEntity implements IExerciceRealisation {
   repetition: number[];
   weight: { number?: number; unit: WeightUnitEnum }[];
 
-  constructor(
-    recovoryTime: number[],
-    series: number,
-    repetition: number[],
-    weight: { number?: number; unit: WeightUnitEnum }[],
-  ) {
-    this.recoveryTime = recovoryTime;
-    this.series = series;
-    this.repetition = repetition;
-    this.weight = weight;
+  constructor(obj: {
+    recoveryTime: number[];
+    series: number;
+    repetition: number[];
+    weight: { number?: number; unit: WeightUnitEnum }[];
+  }) {
+    this.recoveryTime = obj.recoveryTime;
+    this.series = obj.series;
+    this.repetition = obj.repetition;
+    this.weight = obj.weight;
   }
 }
