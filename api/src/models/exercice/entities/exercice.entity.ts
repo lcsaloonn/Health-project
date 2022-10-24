@@ -4,7 +4,7 @@ import {
   IExercice,
   IExerciceDescription,
   IExerciceRealisation,
-} from './interface/exercice.interface';
+} from '../interface/exercice.interface';
 
 export class ExerciceEntiy extends BaseModel implements IExercice {
   title: string;

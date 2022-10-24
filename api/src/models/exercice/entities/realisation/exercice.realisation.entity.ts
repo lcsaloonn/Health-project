@@ -1,5 +1,5 @@
-import { IExerciceRealisation } from '../interface/exercice.interface';
-import { WeightUnitEnum } from '../interface/weightUnit.enum';
+import { IExerciceRealisation } from '../../interface/exercice.interface';
+import { WeightUnitEnum } from '../../interface/weightUnit.enum';
 
 export class ExerciceRealisationEntity implements IExerciceRealisation {
   recoveryTime: number[];

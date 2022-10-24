@@ -22,6 +22,8 @@ export class ExerciceService {
     const data = {
       bodyPart: bodyPart,
     };
-    return this._exerciceRepository.find(data);
+    return this._exerciceRepository.find({
+      description: { tags: { $all: ['red', 'blank'] } },
+    });
   }
 }

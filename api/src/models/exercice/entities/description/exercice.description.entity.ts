@@ -1,5 +1,5 @@
-import { BodyPartEnum } from '../interface/bodyPart.enum';
-import { IExerciceDescription } from '../interface/exercice.interface';
+import { BodyPartEnum } from '../../interface/bodyPart.enum';
+import { IExerciceDescription } from '../../interface/exercice.interface';
 
 export class ExerciceDescriptionEntity implements IExerciceDescription {
   description: string;
