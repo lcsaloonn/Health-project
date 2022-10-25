@@ -1,4 +1,11 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  NotFoundException,
+  Param,
+  Post,
+} from '@nestjs/common';
 import { ApiBody, ApiTags } from '@nestjs/swagger';
 import { CreateExerciceDTO, ReadExerciceByIdDTO } from './dtos/zindex';
 import { ExerciceService } from './exercice.service';
@@ -21,12 +28,13 @@ export class ExerciceController {
     return await this._exerciceService.findById(param.id);
   }
 
-  //IN Work
   @Get('getByBodyPart/:bodyPart')
   async getByBodyPart(
     @Param('bodyPart') bodyPart: BodyPartEnum,
   ): Promise<IExercice[]> {
-    return await this._exerciceService.findByBodyPart(bodyPart);
+    const response = await this._exerciceService.findByBodyPart(bodyPart);
+    if (response.length > 0) return response;
+    else throw new NotFoundException('aucun résultat');
   }
 
   @Post()
