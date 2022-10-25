@@ -1,7 +1,8 @@
 import { IsNotEmpty } from 'class-validator';
+import { IsIdExist } from 'src/common/pipes/validation/isIdExist.pipe';
 
 export class ReadExerciceByIdDTO {
   @IsNotEmpty()
-  //rajouter if id exist
+  @IsIdExist('exercice')
   id: string;
 }
