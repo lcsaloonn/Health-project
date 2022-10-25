@@ -1,6 +1,7 @@
 export abstract class GenericRepository<T> {
   abstract findOneById(id: string): Promise<T>;
   abstract findOneByCondition(filter: any): Promise<T>;
+  abstract findOne(data: any): Promise<T>;
   abstract find(options?: any): Promise<T[]>;
   abstract create(data: T | any): Promise<void>;
   abstract update(id: string, item: T): Promise<void>;
