@@ -25,10 +25,13 @@ export class ExerciceService {
     });
   }
 
-  // WORK IN PROGRESS
-  async findByHyphenTitle(hyphenTitle: string): Promise<IExercice> {
-    // disHyphen the title
-    return this._exerciceRepository.findOneByCondition(hyphenTitle);
+  async findOneByHyphenTitle(hyphenTitle: string): Promise<IExercice> {
+    const title = hyphenTitle.replace(/-/g, ' ');
+    return this.findOneByTitle(title);
+  }
+
+  async findOneByTitle(title: string): Promise<IExercice> {
+    return this._exerciceRepository.findOne('title', title);
   }
 
   /** ---CREATE ---*/

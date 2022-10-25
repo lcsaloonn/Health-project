@@ -14,8 +14,8 @@ export class ExerciceRepository implements GenericRepository<IExercice> {
     });
   }
 
-  async findOne(data: any): Promise<IExercice> {
-    return await this.connection.findOne<IExercice>({ data });
+  async findOne(key: string, value: any): Promise<IExercice> {
+    return await this.connection.findOne<IExercice>({ [key]: value });
   }
 
   async findOneByCondition(filterCondition: any): Promise<IExercice> {

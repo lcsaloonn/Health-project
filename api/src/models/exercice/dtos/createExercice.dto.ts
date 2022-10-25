@@ -13,7 +13,7 @@ import { WeightUnitEnum } from '../interface/weightUnit.enum';
 export class CreateExerciceDTO {
   @IsNotEmpty()
   @IsString()
-  // @Validate(DataExistRule)
+  // @Validate(DataExistRule) //can have only one title equals
   title: string;
 
   creationUser?: ObjectId | null;
