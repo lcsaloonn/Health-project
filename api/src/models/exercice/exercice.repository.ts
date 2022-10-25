@@ -27,6 +27,6 @@ export class ExerciceRepository implements GenericRepository<IExercice> {
   }
 
   async create(exercice: IExercice): Promise<void> {
-    //  await this.connection.insertOne(exercice);
+    await this.connection.insertOne(exercice);
   }
 }

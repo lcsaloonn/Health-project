@@ -1,9 +1,10 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { ApiBody, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { ApiBody, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { CreateExerciceDTO } from './dtos/createExercice.dto';
 import { ExerciceService } from './exercice.service';
+import { BodyPartEnum } from './interface/bodyPart.enum';
 import { IExercice } from './interface/exercice.interface';
-import { CreateExerciceSchema } from './schema/CreateExercice.schema';
+import { CreateExerciceSchema } from './schema/createExercice.schema';
 
 @Controller('exercices')
 // @UseFilters(HttpExceptionFilter)
@@ -23,7 +24,7 @@ export class ExerciceController {
   //IN Work
   @Get('getByBodyPart/:bodyPart')
   async getByBodyPart(
-    @Param('bodyPart') bodyPart: string,
+    @Param('bodyPart') bodyPart: BodyPartEnum,
   ): Promise<IExercice[]> {
     return await this._exerciceService.findByBodyPart(bodyPart);
   }

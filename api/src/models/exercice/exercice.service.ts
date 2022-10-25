@@ -10,9 +10,7 @@ import { IExercice } from './interface/exercice.interface';
 export class ExerciceService {
   constructor(readonly _exerciceRepository: ExerciceRepository) {}
 
-  /**
-   *  FIND
-   */
+  /** ---FIND--- */
 
   async findAllExercice(): Promise<IExercice[]> {
     return this._exerciceRepository.find();
@@ -21,19 +19,19 @@ export class ExerciceService {
     return this._exerciceRepository.findOneById(id);
   }
 
-  //TRAVAIL ICI
   async findByBodyPart(bodyPart: string): Promise<IExercice[]> {
-    const data = {
-      bodyPart: bodyPart,
-    };
     return this._exerciceRepository.find({
-      description: { tags: { $all: ['red', 'blank'] } },
+      'description.bodyParts': bodyPart,
     });
   }
 
-  /**
-   * CREATE
-   */
+  // WORK IN PROGRESS
+  async findByHyphenTitle(hyphenTitle: string): Promise<IExercice> {
+    // disHyphen the title
+    return this._exerciceRepository.findOneByCondition(hyphenTitle);
+  }
+
+  /** ---CREATE ---*/
   async createExercice(exerciceDto: CreateExerciceDTO): Promise<void> {
     const creation = exerciceDto.creationUser
       ? { creationDate: new Date(), creationUser: exerciceDto.creationUser }

@@ -18,12 +18,12 @@ class CreateExerciceDescriptionSchema {
 
   @ApiProperty({
     enum: BodyPartEnum,
-    description: 'bodyPart',
+    description: 'bodyParts',
     example: [BodyPartEnum.BRAS],
     required: true,
     isArray: true,
   })
-  bodyPart: BodyPartEnum[];
+  bodyParts: BodyPartEnum[];
 
   @ApiProperty({
     type: String,
