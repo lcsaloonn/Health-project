@@ -1,6 +1,6 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
-import { ApiBody, ApiQuery, ApiTags } from '@nestjs/swagger';
-import { CreateExerciceDTO } from './dtos/createExercice.dto';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
+import { CreateExerciceDTO, ReadExerciceByIdDTO } from './dtos/zindex';
 import { ExerciceService } from './exercice.service';
 import { BodyPartEnum } from './interface/bodyPart.enum';
 import { IExercice } from './interface/exercice.interface';
@@ -17,8 +17,8 @@ export class ExerciceController {
   }
 
   @Get('getById/:id')
-  async getById(@Param('id') id: string): Promise<IExercice> {
-    return await this._exerciceService.findById(id);
+  async getById(@Param('id') param: ReadExerciceByIdDTO): Promise<IExercice> {
+    return await this._exerciceService.findById(param.id);
   }
 
   //IN Work
