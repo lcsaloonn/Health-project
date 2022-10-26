@@ -3,7 +3,8 @@ import { DropDownListIcon } from "components/forms";
 import { dropdownListIconMock } from "Mocks/dropDownList.mocks";
 import { useEffect, useState } from "react";
 import { HttpService } from "services/http/http.service";
-import { IExercice } from "utils/types/IExercice";
+import { IExercice } from "utils/types/exercice/IExercice";
+
 import "./exerciceView.scss";
 
 const ExerciceView = () => {

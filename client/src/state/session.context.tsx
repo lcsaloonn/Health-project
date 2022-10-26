@@ -4,13 +4,14 @@ import { ISession } from "utils/types/ISessions";
 
 export const SessionCTX = createContext<ISession | null>(null);
 
-export function SessionProvider({ children }: { children: React.ReactNode }) {
-  const http = new HttpService();
-  // useEffect(() => {
-  //   http.get()
-  // }, []);
+// export function SessionProvider({ children }: { children: React.ReactNode }) {
+//   const http = new HttpService();
+//   // useEffect(() => {
+//   //   http.get()
+//   // }, []);
 
-  const data = 
+//   const data =
 
-  return <SessionCTX.Provider value={""}>{children}</SessionCTX.Provider>;
-}
+//  // return <SessionCTX.Provider value={""}>{children}</SessionCTX.Provider>;
+//  return <></>
+// }
