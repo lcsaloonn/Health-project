@@ -3,7 +3,7 @@ import { IsIdExistRule } from 'src/common/pipes/validation/isIdExist.pipe';
 import { IsTtitleExistRule } from 'src/common/pipes/validation/isTitleExist.pipe';
 import { ExerciceController } from './exercice.controller';
 import { ExerciceRepository } from './exercice.repository';
-import { ExerciceService } from './exercice.service';
+import { ExerciceService } from './service/exercice.service';
 
 @Module({
   controllers: [ExerciceController],

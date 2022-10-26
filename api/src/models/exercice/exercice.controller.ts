@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { ApiBody, ApiTags } from '@nestjs/swagger';
 import { CreateExerciceDTO } from './dtos/zindex';
-import { ExerciceService } from './exercice.service';
+import { ExerciceService } from './service/exercice.service';
 import { BodyPartEnum } from './interface/bodyPart.enum';
 import { IExercice } from './interface/exercice.interface';
 import { CreateExerciceSchema } from './schema/createExercice.schema';

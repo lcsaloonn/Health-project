@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateExerciceDTO } from './dtos/createExercice.dto';
-import { ExerciceDescriptionEntity } from './entities/description/exercice.description.entity';
-import { ExerciceEntiy } from './entities/exercice.entity';
-import { ExerciceRealisationEntity } from './entities/realisation/exercice.realisation.entity';
-import { ExerciceRepository } from './exercice.repository';
-import { IExercice } from './interface/exercice.interface';
+import { CreateExerciceDTO } from '../dtos/createExercice.dto';
+import { ExerciceDescriptionEntity } from '../entities/description/exercice.description.entity';
+import { ExerciceEntiy } from '../entities/exercice.entity';
+import { ExerciceRealisationEntity } from '../entities/realisation/exercice.realisation.entity';
+import { ExerciceRepository } from '../exercice.repository';
+import { IExercice } from '../interface/exercice.interface';
 
 @Injectable()
 export class ExerciceService {
