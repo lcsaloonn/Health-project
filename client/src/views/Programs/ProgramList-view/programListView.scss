@@ -1,0 +1,22 @@
+@use "./utils/styles/mixins.scss";
+
+.programs {
+  &-title {
+    &:nth-child(1) {
+      @include mixins.text-format(3.2rem, normal, normal, 700);
+      color: var(--color-orange);
+    }
+    &:nth-child(2) {
+      @include mixins.text-format(2.5rem, normal, normal, 700);
+      color: var(--color-white);
+      margin-bottom: 5rem;
+    }
+  }
+
+  &-cards {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 400px);
+    gap: 20px;
+  }
+}

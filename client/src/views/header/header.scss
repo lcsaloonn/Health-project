@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  margin: 20px auto 5.5rem auto;
+  justify-content: center;
+  .logo {
+    text-align: center;
+    justify-content: center;
+  }
+  .navbar {
+    position: relative;
+  }
+}

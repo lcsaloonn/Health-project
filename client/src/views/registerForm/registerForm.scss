@@ -1,0 +1,39 @@
+@use "./utils/styles/mixins.scss";
+
+.register-form {
+  &-btn {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(247, 185, 70);
+    }
+  }
+  &-error {
+    @include mixins.text-format(1rem, normal, normal, 300);
+    color: var(--color-orange);
+  }
+  &-success {
+    &-icon {
+      margin-bottom: 20px;
+      @screen md {
+        margin-right: 20px;
+      }
+    }
+    &-text {
+      @include mixins.text-format(3rem, normal, normal, 700);
+      color: var(--color-white);
+      align-items: center;
+    }
+    &-link {
+      @include mixins.text-format(1.5rem, normal, normal, 200);
+      color: var(--color-orange);
+      padding-top: 20px;
+    }
+  }
+}

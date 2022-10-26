@@ -1,0 +1,22 @@
+.btn {
+  color: var(--color-black);
+  width: 8rem;
+  border: 2px solid transparent;
+  font-weight: 700;
+  padding: 0.8rem;
+  transition: all 0.3s;
+  font-size: 100%;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+.btn--secondary {
+  border: 2px solid var(--color-orange);
+  background-color: initial;
+  color: var(--color-white);
+}

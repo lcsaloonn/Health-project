@@ -1,0 +1,53 @@
+@use "./utils/styles/mixins.scss";
+.session-info {
+  &-title {
+    text-transform: uppercase;
+    @include mixins.text-format(3.2rem, normal, normal, 700);
+    color: var(--color-orange);
+  }
+
+  &-bodyPart {
+    &-title {
+      @include mixins.text-format(2.2rem, normal, normal, 700);
+      color: var(--color-white);
+    }
+    &-list {
+      display: flex;
+      margin: 40px 0;
+      &-item {
+        margin: 0 20px;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        background-color: var(--color-orange);
+        border-radius: 25px;
+        color: var(--color-white);
+        @include mixins.text-format(1rem, normal, normal, 700);
+        text-transform: capitalize;
+      }
+    }
+  }
+  &-btn {
+    @include mixins.text-format(1.5rem, normal, normal, 700);
+    color: var(--color-white);
+    background-color: var(--color-violet);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 20px 25px;
+    margin: auto;
+    display: block;
+    &:hover {
+      background-color: #9560a8;
+    }
+    @screen md {
+      margin: 3rem 0;
+    }
+  }
+
+  &-parts {
+    &-advice {
+      text-align: center;
+      color: var(--color-orange);
+    }
+  }
+}

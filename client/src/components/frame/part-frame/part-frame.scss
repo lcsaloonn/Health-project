@@ -1,0 +1,26 @@
+@use "./utils/styles/mixins.scss";
+
+.frame-title {
+  @include mixins.text-format(1.5rem, normal, normal, 700);
+  color: var(--color-white);
+  margin: 40px auto;
+  text-align: center;
+  flex-direction: row;
+  display: flex;
+  max-width: 1000px;
+  text-transform: uppercase;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 4px solid var(--color-orange);
+    margin: auto;
+  }
+  &::before {
+    margin-right: 20px;
+  }
+  &::after {
+    margin-left: 20px;
+  }
+}

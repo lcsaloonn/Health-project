@@ -1,0 +1,43 @@
+@use "./utils/styles/mixins.scss";
+
+input {
+  font-size: 18px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: solid 3px var(--color-orange);
+  &:focus {
+    outline: none;
+    border: solid 3px rgb(248, 203, 120);
+  }
+}
+
+label {
+  @include mixins.text-format(1.3rem, normal, normal, 700);
+  color: var(--color-white);
+  padding-bottom: 10px;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+
+  .errorPanel {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--color-orange);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    position: relative;
+    bottom: -10px;
+  }
+  div {
+    .invalid {
+      li {
+        @include mixins.text-format(1rem, normal, normal, 400);
+      }
+    }
+  }
+  input {
+    margin-top: 10px;
+  }
+}

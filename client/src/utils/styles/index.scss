@@ -1,0 +1,31 @@
+@use "./colors.scss";
+// Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("./buttons/buttons.scss");
+@import url("./links/links.scss");
+@import url("./text/text.scss");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+body {
+  background-color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.main-container {
+  margin: 0 20px 100px 20px;
+  @screen md {
+    margin: 0 40px 120px 40px;
+  }
+  @screen lg {
+    margin: 0 70px 140px 70px;
+  }
+  @screen xl {
+    margin: 0 80px 140px 80px;
+  }
+}

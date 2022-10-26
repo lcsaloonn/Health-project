@@ -1,0 +1,21 @@
+@mixin text-format(
+  $size: 14px,
+  $lineHeight: normal,
+  $letterSpacing: 0,
+  $fontweight: normal
+) {
+  font-size: $size;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+  font-weight: $fontweight;
+}
+
+@mixin text-style($color: var(--color-white), $istransparent: false) {
+  @if $istransparent {
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $color;
+  } @else {
+    color: $color;
+  }
+}

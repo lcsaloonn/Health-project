@@ -1,0 +1,53 @@
+@use "./utils/styles/mixins.scss";
+.ex-difficulty-card {
+  display: flex;
+  justify-content: center;
+
+  &-second {
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 25px;
+    min-height: 300px;
+    min-width: auto;
+    max-width: 150px;
+    margin: 5px;
+    @screen md {
+      min-height: 300px;
+      min-width: 150px;
+      max-width: none;
+      margin: 20px;
+    }
+    @screen lg {
+      min-height: 300px;
+      min-width: 250px;
+    }
+    &-title {
+      text-align: center;
+      @include mixins.text-format(0.8rem, normal, normal, 700);
+      padding-bottom: 30px;
+      @screen md {
+        @include mixins.text-format(1.5rem, normal, normal, 700);
+      }
+      @screen lg {
+        @include mixins.text-format(2rem, normal, normal, 700);
+      }
+    }
+    &-icon {
+      color: var(--color-orange);
+      padding-right: 5px;
+      padding-bottom: 10px;
+    }
+    &-element {
+      padding-bottom: 16px;
+      @include mixins.text-format(0.8rem, normal, normal, 400);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      @screen md {
+        @include mixins.text-format(1rem, normal, normal, 400);
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+  }
+}

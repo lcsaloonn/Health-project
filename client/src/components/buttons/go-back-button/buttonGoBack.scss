@@ -1,0 +1,15 @@
+@use "./utils/styles/mixins.scss";
+
+.button-go-back {
+  color: var(--color-white);
+  @include mixins.text-format(1.3rem, normal, normal, 700);
+  align-items: center;
+  text-decoration: none;
+
+  &-icon {
+    padding-right: 10px;
+  }
+  &:hover {
+    color: var(--color-orange);
+  }
+}

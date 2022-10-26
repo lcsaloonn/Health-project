@@ -1,0 +1,50 @@
+@use "./utils/styles/mixins.scss";
+
+.single-exercice {
+  &-go-back {
+    text-align: center;
+    margin-bottom: 20px;
+    @screen md {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    text-transform: uppercase;
+    align-self: center;
+    align-items: center;
+
+    @include mixins.text-format(2rem, normal, normal, 700);
+    margin-bottom: 40px;
+    @screen md {
+      @include mixins.text-format(2.5rem, normal, normal, 700);
+    }
+    @screen lg {
+      @include mixins.text-format(3rem, normal, normal, 700);
+      margin: 0;
+    }
+    @screen xl {
+      @include mixins.text-format(3.5rem, normal, normal, 700);
+      margin: 0;
+    }
+    &-full {
+      @include mixins.text-style(var(--color-white));
+    }
+    &-transparent {
+      @include mixins.text-style(var(--color-orange), true);
+    }
+  }
+  &-description {
+    color: var(--color-white);
+    margin-bottom: 6rem;
+    margin-top: 7rem;
+    p {
+      margin: auto;
+      max-width: 1000px;
+      @include mixins.text-format(16px, 32px, normal, 400);
+    }
+  }
+}
