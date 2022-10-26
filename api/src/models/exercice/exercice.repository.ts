@@ -22,8 +22,9 @@ export class ExerciceRepository implements GenericRepository<IExercice> {
     return await this.connection.findOne<IExercice>({ where: filterCondition });
   }
 
-  async find(options?: any): Promise<IExercice[]> {
-    return await this.connection.find<IExercice>(options).toArray();
+  async find(filter?: any, options?: any): Promise<IExercice[]> {
+    filter = !filter ? {} : filter;
+    return await this.connection.find<IExercice>(filter, options).toArray();
   }
 
   async update(id: string, item: any) {

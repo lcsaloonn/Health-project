@@ -5,7 +5,6 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator';
-import { ObjectId } from 'mongodb';
 import { MongoDb } from 'src/Infrastructure/DataBase/db.connection';
 
 export function IsTitleExist(

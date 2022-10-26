@@ -25,10 +25,9 @@ export class ExerciceController {
     return this._exerciceService.findAllExercice();
   }
 
-  @Get('getById/:id')
-  // @IsIdExist('exercice')
-  async getById(@Param('id') id: string): Promise<IExercice> {
-    return await this._exerciceService.findById(id);
+  @Get('getExerciceDescription')
+  async getAllExercicesDescription(): Promise<IExercice[]> {
+    return this._exerciceService.findExerciceDescription();
   }
 
   @Get('getByBodyPart/:bodyPart')
@@ -38,6 +37,12 @@ export class ExerciceController {
     const response = await this._exerciceService.findByBodyPart(bodyPart);
     if (response.length > 0) return response;
     else throw new NotFoundException('aucun résultat');
+  }
+
+  @Get('getById/:id')
+  // @IsIdExist('exercice')
+  async getById(@Param('id') id: string): Promise<IExercice> {
+    return await this._exerciceService.findById(id);
   }
 
   @Get('getByTitle/:title')

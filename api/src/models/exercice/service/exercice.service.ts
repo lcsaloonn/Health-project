@@ -20,9 +20,12 @@ export class ExerciceService {
   }
 
   async findByBodyPart(bodyPart: string): Promise<IExercice[]> {
-    return this._exerciceRepository.find({
-      'description.bodyParts': bodyPart,
-    });
+    return this._exerciceRepository.find(
+      {
+        'description.bodyParts': bodyPart,
+      },
+      { projection: { realisation: 0 } },
+    );
   }
 
   async findOneByHyphenTitle(hyphenTitle: string): Promise<IExercice> {
@@ -32,6 +35,13 @@ export class ExerciceService {
 
   async findOneByTitle(title: string): Promise<IExercice> {
     return this._exerciceRepository.findOne('title', title);
+  }
+
+  async findExerciceDescription(): Promise<IExercice[]> {
+    return this._exerciceRepository.find(
+      {},
+      { projection: { realisation: 0 } },
+    );
   }
 
   /** ---CREATE ---*/
