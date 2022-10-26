@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { ExercicePublicationService } from 'src/models/publication/services/exercice.publication.service';
 import { CreateExerciceDTO } from '../dtos/createExercice.dto';
 import { ExerciceDescriptionEntity } from '../entities/description/exercice.description.entity';
 import { ExerciceEntiy } from '../entities/exercice.entity';
@@ -46,16 +47,15 @@ export class ExerciceService {
 
   /** ---CREATE ---*/
   async createExercice(exerciceDto: CreateExerciceDTO): Promise<void> {
-    const creation = exerciceDto.creationUser
-      ? { creationDate: new Date(), creationUser: exerciceDto.creationUser }
-      : undefined;
-
     this._exerciceRepository.create(
       new ExerciceEntiy(
         exerciceDto.title,
+        {
+          creationDate: new Date(),
+          creationUser: exerciceDto.creationUser,
+        },
         new ExerciceDescriptionEntity(exerciceDto.description),
         new ExerciceRealisationEntity(exerciceDto.realisation),
-        creation,
       ),
     );
   }
