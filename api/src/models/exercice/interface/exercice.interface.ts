@@ -5,7 +5,8 @@ import { WeightUnitEnum } from './weightUnit.enum';
 export interface IExercice {
   _id: ObjectId;
   title: string;
-  creation?: { creationDate: Date; creationUser: ObjectId | null };
+  creation: { creationDate: Date; creationUser: ObjectId | 'SITE' };
+  mainPublicationId: ObjectId;
   description: IExerciceDescription;
   realisation: IExerciceRealisation;
 }

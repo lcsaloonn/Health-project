@@ -8,20 +8,22 @@ import {
 
 export class ExerciceEntiy extends BaseModel implements IExercice {
   title: string;
-  creation?: { creationDate: Date; creationUser: ObjectId | null };
+  creation: { creationDate: Date; creationUser: ObjectId | null };
+  mainPublicationId: ObjectId;
   description: IExerciceDescription;
   realisation: IExerciceRealisation;
 
   constructor(
     title: string,
+    creation: { creationDate: Date; creationUser: ObjectId | null },
     description: IExerciceDescription,
     realisation: IExerciceRealisation,
-    creation?: { creationDate: Date; creationUser: ObjectId | null },
   ) {
     super();
     this.title = title;
     this.creation = creation;
     this.description = description;
     this.realisation = realisation;
+    this.mainPublicationId = null;
   }
 }
