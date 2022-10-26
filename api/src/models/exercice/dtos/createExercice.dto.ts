@@ -15,7 +15,6 @@ import { WeightUnitEnum } from '../interface/weightUnit.enum';
 export class CreateExerciceDTO {
   @IsNotEmpty()
   @IsString()
-  // @Validate(DataExistRule) //can have only one title equals
   @IsTitleExist('exercice')
   title: string;
 
