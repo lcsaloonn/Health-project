@@ -1,6 +1,7 @@
 import { TruncateContainer } from "components/util";
 import { Link } from "react-router-dom";
 import { IExercice } from "utils/types/exercice/IExercice";
+import { textTransformHyphen } from "utils/utils/text/text.util";
 import StarRaitingCompponent from "../../starRaiting/starRaiting";
 import "./exerciceCard.scss";
 
@@ -9,7 +10,7 @@ const ExerciceCard = ({ props }: { props: IExercice }) => {
     <Link
       className="exercice-card"
       data-testid="link"
-      to={/*props.idTitle*/ "#"}
+      to={textTransformHyphen(props.title)}
     >
       <div className="thumbnail">
         <img

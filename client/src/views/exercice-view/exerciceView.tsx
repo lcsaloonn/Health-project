@@ -20,7 +20,10 @@ const ExerciceView = () => {
 
   useEffect(() => {
     const getExercices = async () => {
-      const path = bodyPart === "all" ? "" : `/getByBodyPart/${bodyPart}`;
+      const path =
+        bodyPart === "all"
+          ? "/getExerciceDescription"
+          : `/getByBodyPart/${bodyPart}`;
       const response = await http.get(`/exercices${path}`);
       if (response.status !== 400) setExercices(response);
     };
