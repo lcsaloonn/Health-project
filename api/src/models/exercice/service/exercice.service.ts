@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { ExercicePublicationService } from 'src/models/publication/services/exercice.publication.service';
 import { CreateExerciceDTO } from '../dtos/createExercice.dto';
 import { ExerciceDescriptionEntity } from '../entities/description/exercice.description.entity';
 import { ExerciceEntiy } from '../entities/exercice.entity';
