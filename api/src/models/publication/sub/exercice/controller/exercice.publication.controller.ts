@@ -1,8 +1,9 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiBody, ApiTags } from '@nestjs/swagger';
-import { CreateExercicePublicationDTO } from '../sub/exercice/dtos/createExercice.publication.dto';
-import { CreateExercicePublicationSchema } from '../sub/exercice/schema/createExercice.publication.schema';
-import { ExercicePublicationService } from '../sub/exercice/service/exercice.publication.service';
+import { ExercicePublicationService } from 'src/models/publication/sub/exercice/service/exercice.publication.service';
+
+import { CreateExercicePublicationDTO } from '../dtos/createExercice.publication.dto';
+import { CreateExercicePublicationSchema } from '../schema/createExercice.publication.schema';
 
 @Controller('publication')
 @ApiTags('Publication exercice')

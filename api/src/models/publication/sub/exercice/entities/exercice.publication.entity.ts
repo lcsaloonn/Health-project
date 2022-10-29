@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
-import { PublicationTypeEnum } from '../../interface/enum/publication.type.enum';
-import { IExercicePublication } from '../../interface/exercice.publication.interface';
-import { PublicationEntity } from '../publicatition.entity';
+import { PublicationEntity } from 'src/models/publication/entities/publicatition.entity';
+import { PublicationTypeEnum } from 'src/models/publication/interface/enum/publication.type.enum';
+import { IExercicePublication } from 'src/models/publication/interface/exercice.publication.interface';
 
 export class ExercicePublicationEntity
   extends PublicationEntity

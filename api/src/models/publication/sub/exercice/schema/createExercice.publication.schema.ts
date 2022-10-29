@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ObjectId } from 'mongodb';
-import { CreatePublicationSchema } from '../create.publication.schema';
+import { CreatePublicationSchema } from 'src/models/publication/schema/create.publication.schema';
 
 export class CreateExercicePublicationSchema extends CreatePublicationSchema {
   @ApiProperty({

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { ExercicePulicationController } from './controllers/exercice.publication.controller';
 import { ExercicePublicationRepository } from './repository/publication.repository';
-import { ExercicePublicationService } from './services/exercice.publication.service';
+import { ExercicePublicationService } from './sub/exercice/service/exercice.publication.service';
+import { ExercicePulicationController } from './sub/exercice/controller/exercice.publication.controller';
 
 @Module({
   controllers: [ExercicePulicationController],

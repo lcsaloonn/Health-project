@@ -1,8 +1,9 @@
-import { CreateExercicePublicationDTO } from '../dtos/exercice/createExercice.publication.dto';
-import { ExercicePublicationEntity } from '../entities/exercice/exercice.publication.entity';
-import { IExercicePublication } from '../interface/exercice.publication.interface';
-import { ExercicePublicationRepository } from '../repository/publication.repository';
+import { Injectable } from '@nestjs/common';
+import { ExercicePublicationRepository } from '../../../repository/publication.repository';
+import { CreateExercicePublicationDTO } from '../dtos/createExercice.publication.dto';
+import { ExercicePublicationEntity } from '../entities/exercice.publication.entity';
 
+@Injectable()
 export class ExercicePublicationService {
   constructor(
     readonly _exercicePublicationRepository: ExercicePublicationRepository,
