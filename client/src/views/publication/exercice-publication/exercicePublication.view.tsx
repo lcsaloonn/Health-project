@@ -1,20 +1,21 @@
 import { ButtonGoBack } from "components/buttons";
 import { ImageWrapper, PartFrame } from "components/frame";
 import { TextList } from "components/text";
-import { useEffect, useLayoutEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useLayoutEffect, useState } from "react";
+import { useParams } from "react-router";
 import { HttpService } from "services/http/http.service";
-import { IExercicePost } from "utils/types/IExercicePost.interface";
+import { IExercicePublication } from "utils/types/publication/exercicePublication.interface";
+
 import NotFoundView from "views/notFind-view/notFindView";
-import "./signleExerciceView.scss";
+import "./exercicePublication.scss";
 
 const SingleExerciceView = () => {
   const http = new HttpService();
 
   const { id } = useParams();
-  const [title, setTitle] = useState<string>("");
+  const [title, setTitle] = useState("");
   const [titlesplit, setTitleSplit] = useState<string[]>([]);
-  const [exercice, setExercice] = useState<IExercicePost>();
+  const [exercice, setExercice] = useState<IExercicePublication>();
 
   const getExercice = async () => {
     try {
@@ -49,7 +50,7 @@ const SingleExerciceView = () => {
             ))}
           </div>
 
-          <ImageWrapper imgUrl={exercice.imgUrl} alt={title} />
+          <ImageWrapper imgUrl="" alt={title} />
         </div>
         <div className="single-exercice-description">
           <PartFrame title="Description" />
@@ -58,7 +59,7 @@ const SingleExerciceView = () => {
 
         <div className="single-exercice-how-to">
           <PartFrame title={"Comment faire le " + title} />
-          <TextList list={exercice.howToRealise} />
+          {/* <TextList list={exercice.howToRealise} /> */}
         </div>
       </div>
     );
