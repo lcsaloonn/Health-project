@@ -7,6 +7,7 @@ export class PublicationEntity extends BaseModel {
   creationDate: Date;
 
   constructor(
+    public title: string,
     public creationUser: ObjectId | 'SITE',
     public type: PublicationTypeEnum,
     public isVisible: boolean,

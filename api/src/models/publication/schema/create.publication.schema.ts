@@ -11,6 +11,13 @@ export class CreatePublicationSchema {
   creationUser: ObjectId | 'SITE';
 
   @ApiProperty({
+    description: 'title',
+    example: 'curl-d',
+    required: true,
+  })
+  title: string;
+
+  @ApiProperty({
     enum: PublicationTypeEnum,
     description: 'type',
     example: [PublicationTypeEnum.EXERCICE],

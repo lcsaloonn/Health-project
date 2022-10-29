@@ -10,6 +10,7 @@ export class ExercicePublicationEntity
   constructor(
     creationUser: ObjectId | 'SITE',
     isVisible: boolean,
+    title: string,
     public exerciceId: ObjectId,
     public howToRealise: { id: number; text: string }[],
     public description: string,
@@ -17,6 +18,6 @@ export class ExercicePublicationEntity
     public imageUrl: string,
     type = PublicationTypeEnum.EXERCICE,
   ) {
-    super(creationUser, type, isVisible);
+    super(title, creationUser, type, isVisible);
   }
 }

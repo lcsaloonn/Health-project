@@ -16,6 +16,7 @@ export class ExercicePublicationService {
       new ExercicePublicationEntity(
         publication.creationUser,
         publication.isVisible,
+        publication.title,
         publication.exerciceId,
         publication.howToRealise,
         publication.description,
@@ -32,5 +33,13 @@ export class ExercicePublicationService {
 
   async findOneById(id: string) {
     return this._exercicePublicationRepository.findOneById(id);
+  }
+
+  async findByHypenTitlte(title: string) {
+    return this.findByTitle(title.replace(/-/g, ' '));
+  }
+  async findByTitle(title: string) {
+    console.log(title);
+    return this._exercicePublicationRepository.findOne('title', title);
   }
 }

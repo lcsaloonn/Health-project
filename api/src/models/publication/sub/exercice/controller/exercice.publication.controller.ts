@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiBody, ApiTags } from '@nestjs/swagger';
 import { ExercicePublicationService } from 'src/models/publication/sub/exercice/service/exercice.publication.service';
 
@@ -17,6 +17,10 @@ export class ExercicePulicationController {
   @Get()
   async getAllExercicePublication() {
     return this._exercicePublicationService.findAll();
+  }
+  @Get('getByHyphenTitle/:title')
+  async getByHyphenTitle(@Param('title') title: string) {
+    return this._exercicePublicationService.findByHypenTitlte(title);
   }
 
   /** CREATE */
