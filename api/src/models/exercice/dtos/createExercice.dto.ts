@@ -10,6 +10,7 @@ import {
 import { ObjectId } from 'mongodb';
 import { IsTitleExist } from 'src/common/pipes/validation/isTitleExist.pipe';
 import { BodyPartEnum } from '../interface/bodyPart.enum';
+import { EquipmentEnum } from '../interface/equipment.enum';
 import { WeightUnitEnum } from '../interface/weightUnit.enum';
 
 export class CreateExerciceDTO {
@@ -41,6 +42,10 @@ class CreateExerciceDescriptionDTO {
   @IsNotEmpty()
   @IsEnum(BodyPartEnum)
   bodyParts: BodyPartEnum[];
+
+  @IsNotEmpty()
+  @IsEnum(EquipmentEnum)
+  equipment: EquipmentEnum[];
 
   @IsNotEmpty()
   @IsString()

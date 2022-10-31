@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { ObjectId } from 'mongodb';
 import { BodyPartEnum } from '../interface/bodyPart.enum';
+import { EquipmentEnum } from '../interface/equipment.enum';
 import { WeightUnitEnum } from '../interface/weightUnit.enum';
 
 /** DESCRIPTION */
@@ -24,6 +25,15 @@ class CreateExerciceDescriptionSchema {
     isArray: true,
   })
   bodyParts: BodyPartEnum[];
+
+  @ApiProperty({
+    enum: EquipmentEnum,
+    description: 'equipment',
+    example: [EquipmentEnum.SANS_MATERIEL],
+    required: true,
+    isArray: true,
+  })
+  equipment: EquipmentEnum[];
 
   @ApiProperty({
     type: String,
@@ -61,6 +71,7 @@ class CreateExerciceRealisationSchema {
   @ApiProperty({
     type: String,
     description: 'weight',
+    example: { number: 4, unit: WeightUnitEnum.KG },
     isArray: true,
   })
   weight: { number?: number; unit: WeightUnitEnum }[];

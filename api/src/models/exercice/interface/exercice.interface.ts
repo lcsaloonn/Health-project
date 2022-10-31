@@ -1,5 +1,6 @@
 import { ObjectId } from 'mongodb';
 import { BodyPartEnum } from './bodyPart.enum';
+import { EquipmentEnum } from './equipment.enum';
 import { WeightUnitEnum } from './weightUnit.enum';
 
 export interface IExercice {
@@ -15,6 +16,7 @@ export interface IExerciceDescription {
   description: string;
   raiting: number;
   bodyParts: BodyPartEnum[];
+  equipment: EquipmentEnum[];
   imageUrl: string;
 }
 
