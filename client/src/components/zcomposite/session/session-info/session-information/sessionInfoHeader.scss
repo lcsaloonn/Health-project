@@ -1,0 +1,20 @@
+@use "./utils/styles/mixins.scss";
+.session-information-header {
+  display: flex;
+  justify-content: space-around;
+  &-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    &-icon {
+      color: rgb(12, 231, 158);
+      padding-bottom: 10px;
+    }
+    &-main {
+      @include mixins.text-format(1.1rem, normal, normal, 700);
+    }
+    &-sub {
+      @include mixins.text-format(0.8rem, normal, normal, 0);
+    }
+  }
+}
