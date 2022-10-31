@@ -39,7 +39,6 @@ export class ExercicePublicationService {
     return this.findByTitle(title.replace(/-/g, ' '));
   }
   async findByTitle(title: string) {
-    console.log(title);
     return this._exercicePublicationRepository.findOne('title', title);
   }
 }
