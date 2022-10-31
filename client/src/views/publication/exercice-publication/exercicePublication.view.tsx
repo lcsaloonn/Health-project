@@ -13,28 +13,24 @@ const SingleExerciceView = () => {
   const http = new HttpService();
 
   const { id } = useParams();
-  const [title, setTitle] = useState("");
-  const [titlesplit, setTitleSplit] = useState<string[]>([]);
   const [exercice, setExercice] = useState<IExercicePublication>();
 
-  const getExercice = async () => {
-    try {
-      const response = await http.get(`/exercicePost/${id}`);
-      if (response.status !== 400) {
-        setExercice(response);
-      }
-    } catch {}
-  };
-
   useLayoutEffect(() => {
-    if (id !== undefined) {
-      setTitle(id.replaceAll("-", " "));
-      setTitleSplit(id.split("-"));
-    }
+    const getExercice = async () => {
+      try {
+        const response = await http.get(`/publication/getByHyphenTitle/${id}`);
+        if (response.status !== 400) {
+          setExercice(response);
+          return response;
+        }
+      } catch {}
+    };
     getExercice();
-  }, [""]);
 
-  if (exercice !== undefined) {
+    console.log(exercice);
+  }, []);
+
+  if (exercice) {
     return (
       <div className="main-container single-exercice">
         <div className="single-exercice-go-back grid grid-cols-3 ">
@@ -43,14 +39,18 @@ const SingleExerciceView = () => {
         <div className=" md:grid  md:grid-cols-3 gap-4">
           <div className="single-exercice-title">
             <span className="single-exercice-title-transparent">Exercice</span>
-            {titlesplit.map((element: string, id: number) => (
+            {/* {titlesplit.map((element: string, id: number) => (
               <span className="single-exercice-title-full" key={id}>
                 {element}
               </span>
-            ))}
+            ))} */}
+            <span className="single-exercice-title-full">{exercice.title}</span>
           </div>
 
-          <ImageWrapper imgUrl="" alt={title} />
+          <ImageWrapper
+            imgUrl="exercicePost/ecarte-couche-haltere.gif"
+            alt="#"
+          />
         </div>
         <div className="single-exercice-description">
           <PartFrame title="Description" />
@@ -58,8 +58,8 @@ const SingleExerciceView = () => {
         </div>
 
         <div className="single-exercice-how-to">
-          <PartFrame title={"Comment faire le " + title} />
-          {/* <TextList list={exercice.howToRealise} /> */}
+          <PartFrame title={"Comment faire le " + exercice.title} />
+          <TextList list={exercice.howToRealise} />
         </div>
       </div>
     );

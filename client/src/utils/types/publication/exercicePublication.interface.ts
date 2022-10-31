@@ -2,6 +2,7 @@ import { PublicationTypeEnum } from "./enum/publicaton.enum";
 
 export interface IExercicePublication {
   _id: string;
+  title: string;
   type: PublicationTypeEnum;
   isMainPublication: boolean;
   creationDate: Date;
