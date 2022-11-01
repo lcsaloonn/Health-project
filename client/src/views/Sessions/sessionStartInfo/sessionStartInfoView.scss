@@ -29,21 +29,29 @@
 
   &-content {
     background-color: var(--color-white);
-    width: 60%;
+    width: 100%;
     box-sizing: border-box;
     padding: 40px;
     border-radius: 25px;
     margin: auto;
+
+    @screen md {
+      width: 75%;
+    }
+    @screen lg {
+      width: 60%;
+    }
     &-text {
       padding-top: 40px;
     }
 
     &-bodyPart {
       padding-top: 40px;
-      display: flex;
+
       &-item {
-        margin: 0 20px;
-        box-sizing: border-box;
+        width: 45px;
+        margin: 0 5px;
+        text-align: center;
         padding: 10px 20px;
         background-color: var(--color-orange);
         border-radius: 25px;

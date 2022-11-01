@@ -55,9 +55,12 @@ export function SessionStartInfoView() {
         />
         <div className="session-info-content-text">{mock.description}</div>
 
-        <div className="session-info-content-bodyPart">
+        <div className="session-info-content-bodyPart grid grid-cols-6 md:grid-cols-12 lg:grid-cols-5 xl:grid-cols-7   gap-2">
           {mock.bodyPart.map((item: string, key: number) => (
-            <span key={key} className="session-info-content-bodyPart-item">
+            <span
+              key={key}
+              className="session-info-content-bodyPart-item col-span-2 md:col-span-3 lg:col-span-1"
+            >
               {item}
             </span>
           ))}
