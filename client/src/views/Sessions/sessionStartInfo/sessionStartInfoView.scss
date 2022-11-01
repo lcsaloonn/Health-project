@@ -1,19 +1,46 @@
 @use "./utils/styles/mixins.scss";
 .session-info {
-  &-title {
-    text-transform: uppercase;
-    @include mixins.text-format(3.2rem, normal, normal, 700);
-    color: var(--color-orange);
-  }
-
-  &-bodyPart {
+  &-header {
+    text-align: center;
     &-title {
+      text-transform: uppercase;
+      @include mixins.text-format(3.2rem, normal, normal, 700);
+      color: var(--color-orange);
+    }
+    &-subtitle {
       @include mixins.text-format(2.2rem, normal, normal, 700);
       color: var(--color-white);
     }
-    &-list {
+    &-btn {
+      @include mixins.text-format(1.5rem, normal, normal, 700);
+      color: var(--color-white);
+      background-color: var(--color-violet);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 20px 25px;
+      margin: 40px auto;
+      display: block;
+      &:hover {
+        background-color: #9560a8;
+      }
+    }
+  }
+
+  &-content {
+    background-color: var(--color-white);
+    width: 60%;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 25px;
+    margin: auto;
+    &-text {
+      padding-top: 40px;
+    }
+
+    &-bodyPart {
+      padding-top: 40px;
       display: flex;
-      margin: 40px 0;
       &-item {
         margin: 0 20px;
         box-sizing: border-box;
@@ -21,33 +48,49 @@
         background-color: var(--color-orange);
         border-radius: 25px;
         color: var(--color-white);
-        @include mixins.text-format(1rem, normal, normal, 700);
+        @include mixins.text-format(0.9rem, normal, normal, 700);
         text-transform: capitalize;
       }
     }
-  }
-  &-btn {
-    @include mixins.text-format(1.5rem, normal, normal, 700);
-    color: var(--color-white);
-    background-color: var(--color-violet);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 20px 25px;
-    margin: auto;
-    display: block;
-    &:hover {
-      background-color: #9560a8;
-    }
-    @screen md {
-      margin: 3rem 0;
+
+    &-pop {
+      margin-top: 45px;
+      @include mixins.text-format(1.2rem, normal, normal, 700);
+      color: var(--color-grey);
+      text-align: center;
+      &-icon {
+        cursor: pointer;
+        padding-left: 5px;
+        &:hover {
+          color: var(--color-orange);
+        }
+      }
     }
   }
 
-  &-parts {
-    &-advice {
-      text-align: center;
-      color: var(--color-orange);
+  &-exercices {
+    &-title {
+      margin: 40px 0;
+      @include mixins.text-format(1.3rem, normal, normal, 700);
+    }
+    &-item {
+      display: flex;
+      img {
+        height: 120px;
+        width: auto;
+      }
+      &-title {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        @include mixins.text-format(1.2rem, normal, normal, 700);
+        &-link {
+          @include mixins.text-format(1rem, normal, normal, 700);
+          text-decoration: none;
+          color: var(--color-orange);
+        }
+      }
     }
   }
 }

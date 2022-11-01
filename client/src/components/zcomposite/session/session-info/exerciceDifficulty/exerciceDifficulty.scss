@@ -1,0 +1,24 @@
+@use "./utils/styles/mixins.scss";
+
+.session-info-parts {
+  display: flex;
+  margin-top: 40px;
+  &-title {
+    @include mixins.text-format(4rem, normal, normal, 700);
+    color: #fac48a;
+    align-items: center;
+    margin: auto 0;
+  }
+  &-number {
+    align-items: center;
+    margin: auto 40px auto 0;
+    @include mixins.text-format(7rem, normal, normal, 700);
+    @include mixins.text-style(var(--color-white), transparent, 4px);
+  }
+  &-difficulty {
+    &-advice {
+      text-align: center;
+      color: var(--color-orange);
+    }
+  }
+}
