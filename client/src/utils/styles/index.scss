@@ -28,4 +28,10 @@ body {
   @screen xl {
     margin: 0 80px 140px 80px;
   }
+
+  .hr {
+    width: 100%;
+    border: 1px solid var(--color-light-grey);
+    height: 0px;
+  }
 }
