@@ -1,5 +1,5 @@
 import { HTMLInputTypeAttribute, useEffect, useState } from "react";
-import "./formInput.scss";
+//import "./formInput.scss";
 
 export interface IFormInput {
   type: HTMLInputTypeAttribute;

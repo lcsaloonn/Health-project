@@ -1,0 +1,27 @@
+.input-weight {
+  border: solid 3px var(--color-orange);
+  background-color: var(--color-white);
+  display: inline-flex;
+
+  &:focus {
+    border: solid 3px rgb(248, 203, 120);
+  }
+  input {
+    text-align: center;
+    margin-right: 10px;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  select {
+    background-color: var(--color-white);
+    border: none;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 17px;
+    option {
+      border: none;
+    }
+  }
+}

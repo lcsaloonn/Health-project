@@ -6,6 +6,7 @@ import { ProgramListView } from "views/Programs/ProgramList-view/programListView
 import { ProgramStartInfoView } from "views/Programs/programStartInfo/programStartInfoView";
 import SingleExerciceView from "views/publication/exercice-publication/exercicePublication.view";
 import { RegisterFormComposant } from "views/registerForm/registerForm.composant";
+import { SessionExerciceView } from "views/Sessions/sessionExercice/sessionExercice.view";
 import { SessionListView } from "views/Sessions/SessionsList/sessionListView";
 import { SessionStartInfoView } from "views/Sessions/sessionStartInfo/sessionStartInfoView";
 import ExerciceView from "./views/exercice-view/exerciceView";
@@ -33,6 +34,7 @@ function App() {
           <Route path="session">
             <Route index element={<SessionListView />} />
             <Route path=":id" element={<SessionStartInfoView />} />
+            <Route path=":id/exercice" element={<SessionExerciceView />} />
           </Route>
 
           <Route path="login" element={<LoginView />} />

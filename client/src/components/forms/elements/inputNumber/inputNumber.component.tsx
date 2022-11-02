@@ -29,6 +29,7 @@ export function InputNUmberComponent() {
   useEffect(() => {
     if (inputRef.current != null) {
       inputRef.current.value = number.toString();
+      // console.log(number); //here to return value
     }
   }, [number]);
 
