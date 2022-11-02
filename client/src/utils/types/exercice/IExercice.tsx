@@ -1,5 +1,5 @@
-import { BodyPartEnum } from "./bodyPart.enum";
-import { WeightUnitEnum } from "./weightUnit.enum";
+import { BodyPartEnum } from "./enum/bodyPart.enum";
+import { WeightUnitEnum } from "./enum/weightUnit.enum";
 
 export interface IExercice {
   _id: string;

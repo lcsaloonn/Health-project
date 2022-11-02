@@ -4,7 +4,7 @@ import { SessionInfoHeaderComponent } from "components/zcomposite/session";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { DifficultyEnum } from "utils/types/enums/difficulty.enum";
-import { BodyPartEnum } from "utils/types/exercice/bodyPart.enum";
+import { BodyPartEnum } from "utils/types/exercice/enum/bodyPart.enum";
 import "./sessionStartInfoView.scss";
 
 const mock = {
