@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./inputNumber.scss";
 
-export function InputNUmberComponent() {
+export function InputNUmberComponent({ maxvalue }: { maxvalue: number }) {
   const [number, setNumber] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -9,7 +9,7 @@ export function InputNUmberComponent() {
     if (inputRef.current?.value != null) {
       if (
         /^[0-9]*$/.test(inputRef.current.value) &&
-        parseInt(inputRef.current.value) <= 500
+        parseInt(inputRef.current.value) <= maxvalue
       ) {
         if (inputRef.current.value === " ") {
           setNumber(0);
