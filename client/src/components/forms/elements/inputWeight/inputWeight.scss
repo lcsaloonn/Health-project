@@ -14,14 +14,10 @@
       outline: none;
     }
   }
-  select {
-    background-color: var(--color-white);
-    border: none;
+  span {
     text-align: center;
-    text-transform: capitalize;
     font-size: 17px;
-    option {
-      border: none;
-    }
+    text-transform: capitalize;
+    margin: auto 20px;
   }
 }
